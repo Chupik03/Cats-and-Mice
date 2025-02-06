@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto"
+    motion:motionDebug="SHOW_PATH" >
+
+    <ConstraintSet android:id="@+id/btStart">
+        <Constraint
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/imageMouse"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.0" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            android:id="@+id/imageMouse"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="1.0" />
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/btStart"
+        motion:constraintSetEnd="@+id/end"
+        motion:duration="2500" >
+        <KeyFrameSet>
+            <KeyAttribute
+                motion:motionTarget="@+id/imageMouse"
+                motion:framePosition="100"
+                android:rotation="180"/>
+        </KeyFrameSet>
+    </Transition>
+</MotionScene>
